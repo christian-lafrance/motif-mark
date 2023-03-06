@@ -1,0 +1,5 @@
+## Motif Mark   
+
+This program labels genes with exons and motifs. It takes a fasta file containing gene sequences and finds the exons, which are assumed to be capitalized in the sequence. Introns are assumed to be lower case. A separate motif file where their sequences are separated by newlines, is used to seach the gene sequences for these motifs. This program can handle overlapping motifs. 
+
+The output will be a png file where each gene is drawn as a line and labeled. Exons are drawn as a black box. Any line that is not in a black box is an intron. Each motif will be drawn as a box along the gene line using colors which are conserved across all genes. So one color on one gene will correspond to the same motif on another gene. The colors are decoded in the legend. The length of all boxes, exons and motifs, correspond to the length of each sequence. 
