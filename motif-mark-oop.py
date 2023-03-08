@@ -65,7 +65,8 @@ class Gene:
             motif = motif.upper()
             motif1 = motif.replace("U", "[UT]")
             motif2 = motif1.replace("Y", "[CTU]")
-            pattern = f'(?=({motif2}))'
+            motif3 = motif2.replace("R", "[AG]")
+            pattern = f'(?=({motif3}))'
             motif_locations = [(m.start()+1, m.start()+motif_len) for m in re.finditer(pattern.upper(), self.seq.upper())]
             if len(motif_locations) > 0:
                 self.motifs[motif] = motif_locations
